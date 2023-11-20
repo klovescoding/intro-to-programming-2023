@@ -1,10 +1,12 @@
+// Lesson 4.2
+
 let today = new Date();
 let thisYear = today.getFullYear();
-let footer = document.querySelector("footer");
+let small = document.querySelector("small");
 let copyright = document.createElement("p")
 
-copyright.innerHTML = `&copy ${thisYear} Karen's Website`
-footer.appendChild(copyright);
+copyright.innerHTML = `&copy; ${thisYear} - My Website`
+small.appendChild(copyright);
 
 
 let skills = [
@@ -22,3 +24,40 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
+
+
+// Lesson 4.3
+
+let messageForm = document.querySelector('[name="leave_message"]');
+messageForm.addEventListener('submit', function (event) {
+  
+    let usersName = event.target.usersName
+    let usersEmail = document.querySelector('[name="usersEmail"]')
+    let usersMessage = document.querySelector('[name="usersMessage"]')
+   
+    event.preventDefault();
+     console.log(usersName.value)
+     console.log(usersEmail.value)
+     console.log(usersMessage.value)
+    
+     let messageSection = document.getElementById("messages")
+
+
+     let messageList = messageSection.querySelector("ul")
+     let newMessage = document.createElement("li")
+     newMessage.innerHTML = `<a href="mailto: ${usersEmail.value}">${usersName.value}</a> wrote: <span>${usersMessage.value}</span>`
+
+     let removeButton = document.createElement("button")
+     removeButton.innerHTML = `remove <input type="button">`
+
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
+     
+     document.querySelector("form").reset()
+
+     removeButton.addEventListener('click', function () {
+        
+        let entry= removeButton.parentNode;
+        entry.remove();
+       
+   })});
