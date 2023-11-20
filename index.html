@@ -1,65 +1,76 @@
 <!DOCTYPE html>
+
 <html>
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Karen's Website</title>
+    <title>My Website</title>
     <link rel="icon" href="images/favicon.jpg">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
   </head>
 
   <body>
 
     <header>
-      <a href="https://klovescoding.github.io/intro-to-programming-2023/">
-        <img src = "images/logo.jpg" height = "90px" weight = "150px" alt ="The letter 'K'" >
+      <a href="index.html">
+        <img src = "images/logo.jpg" height = "90px" weight = "150px" alt ="Site logo" title = "Home">
       </a>
     </header>
 
     <main>
-
-      <br> 
-
-      <section>
-        <h1>About</h1>
-        <p> Hi, I'm Karen!</p> 
+      <section><br>
+        <h1>ABOUT</h1>
+        <p> Hi, welcome to my website!</p> 
       </section>
-
-      <br>
-
-      <section>
-        <h1>Experience</h1>
+  
+      <section><br>
+        <h1>EXPERIENCE</h1>
         <ul>
-          <li>Experience</li>
-          <li>Experience</li>
+          <li>Experience 1 </li>
+          <li>Experience 2 </li>
       </ul>  
       </section> 
-
-      <br>
-
-      <section id ="skills">
-        <h2>Skills</h2>
+      
+      <section id ="skills"><br>
+        <h2>SKILLS</h2>
         <ul></ul>
       </section>
-
-      <br>
-
-      <section>
-        <h1>Connect</h1>
+  
+      <section><br>
+        <h1>CONNECT</h1>
         <p>Check out my work on <a href="https://github.com/klovescoding/" target="_blank">Github.</a></p>
       </section>
+
+    <section><br>
+      <h2>LEAVE A MESSAGE</h2>
+      <form name="leave_message">
+        <label for="name">Name:</label><br>
+        <input type="text" name = "usersName" required ="true"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" name = "usersEmail" required ="true"> <br><br>
+        <label for="message">Message:</label><br>
+        <textarea name = "usersMessage" required ="true"></textarea><br><br>
+        <button type = "submit">Submit</button>
+      </form>
+    </section>
+
+    <section id = "messages"><br>
+      <h2>MESSAGES</h2>
+      <ul></ul>
+    </section>
 
     </main>
 
     <br>
     <br>
- 
-    <footer></footer>
+    <br>
+
+   <div id="line"></div>
+   <footer><small></small></footer>
 
     <script src="js/index.js"></script>
 
   </body>
-
 </html>
