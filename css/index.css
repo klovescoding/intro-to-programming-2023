@@ -93,7 +93,7 @@ h1, h2  {
 
 #div {
   width: 100%;
-  border: 2px solid #007C7C;
+  border-bottom: 2px solid #007C7C;
   padding-top: 30%;
   background-color: #e8e8c1;
   margin-top: 20%;
