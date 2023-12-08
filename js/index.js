@@ -5,8 +5,9 @@ let thisYear = today.getFullYear();
 let small = document.querySelector("small");
 let copyright = document.createElement("p")
 
-copyright.innerHTML = `&copy; ${thisYear} - My Website`
+copyright.innerHTML = `Copyright &copy; ${thisYear} - My Website`
 small.appendChild(copyright);
+small.style.textAlign = "center";
 
 
 let skills = [
@@ -41,23 +42,21 @@ messageForm.addEventListener('submit', function (event) {
      console.log(usersMessage.value)
     
      let messageSection = document.getElementById("messages")
-
-
      let messageList = messageSection.querySelector("ul")
      let newMessage = document.createElement("li")
      newMessage.innerHTML = `<a href="mailto: ${usersEmail.value}">${usersName.value}</a> wrote: <span>${usersMessage.value}</span>`
-
      let removeButton = document.createElement("button")
-     removeButton.innerHTML = `remove <input type="button">`
+     removeButton.innerHTML = `delete <input type="button">`
+     removeButton.classList.add("removeButton")
 
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
-     
+    
      document.querySelector("form").reset()
 
      removeButton.addEventListener('click', function () {
         
         let entry= removeButton.parentNode;
         entry.remove();
-       
+              
    })});

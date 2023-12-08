@@ -3,6 +3,15 @@
 <html>
 
   <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GGHKR8FWR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4GGHKR8FWR');
+</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,38 +22,45 @@
 
   <body>
 
-    <header>
-      <a href="index.html">
-        <img src = "images/logo.jpg" height = "90px" weight = "150px" alt ="Site logo" title = "Home">
-      </a>
+    <header class= "header">
+      <span id="logo" class ="header">My Website</span>
+      <nav>
+        <ul id="nav" class ="header">
+          <li id ="home" class ="li">Home</li>
+          <li id = "work" class ="li">Work</li>
+          <li id = "about" class ="li">About</li>
+        </ul>
+      </nav>    
     </header>
-
+  
     <main>
-      <section><br>
-        <h1>ABOUT</h1>
+      <section class = "section" id = "aboutMain" ><br>
+        <h1 class = "headlines">About</h1>
         <p> Hi, welcome to my website!</p> 
       </section>
   
-      <section><br>
-        <h1>EXPERIENCE</h1>
-        <ul>
-          <li>Experience 1 </li>
-          <li>Experience 2 </li>
+      <section class = "section" id = "experience"><br>
+        <h1 class = "headlines">Experience</h1>
+        <ul id = "flexExp" class = "listItems">
+          <li class = "flexLi">Experience 1 </li>
+          <li class = "flexLi" >Experience 2 </li>
+          <li class = "flexLi">Experience 3 </li>
+          <li class = "flexLi">Experience 4 </li>
       </ul>  
       </section> 
       
-      <section id ="skills"><br>
-        <h2>SKILLS</h2>
-        <ul></ul>
-      </section>
-  
-      <section><br>
-        <h1>CONNECT</h1>
-        <p>Check out my work on <a href="https://github.com/klovescoding/" target="_blank">Github.</a></p>
+      <section class = "section" id ="skills"><br>
+        <h2 class = "headlines">Skills</h2>
+        <ul id = "gridSkills" class = "listItems"></ul>
       </section>
 
-    <section><br>
-      <h2>LEAVE A MESSAGE</h2>
+      <section id ="connect"><br>
+        <h1 >Connect</h1>
+        <p>Connect with me</p>
+      </section>
+
+    <section id = "leaveMessages"><br>
+      <h2>Message me!</h2>
       <form name="leave_message">
         <label for="name">Name:</label><br>
         <input type="text" name = "usersName" required ="true"><br><br>
@@ -52,22 +68,20 @@
         <input type="email" name = "usersEmail" required ="true"> <br><br>
         <label for="message">Message:</label><br>
         <textarea name = "usersMessage" required ="true"></textarea><br><br>
-        <button type = "submit">Submit</button>
+        <button id= "sendButton" type = "submit">Send</button>
       </form>
     </section>
 
     <section id = "messages"><br>
-      <h2>MESSAGES</h2>
+      <h2 id="myMessages">My messages:</h2>
       <ul></ul>
     </section>
 
     </main>
 
-    <br>
-    <br>
-    <br>
+    <br><br><br>
 
-   <div id="line"></div>
+   <div id="div"></div>
    <footer><small></small></footer>
 
     <script src="js/index.js"></script>
