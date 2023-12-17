@@ -23,12 +23,12 @@
   <body>
 
     <header class= "header">
-      <span id="logo" class ="header">My Website</span>
+      <span id="logo" class ="header" class = "classNav"><a href ="#aboutMain">My Website</a></span>
       <nav>
         <ul id="nav" class ="header">
-          <li id ="home" class ="li">Home</li>
-          <li id = "work" class ="li">Work</li>
-          <li id = "about" class ="li">About</li>
+          <li id ="home" class ="li" class="classNav"><a href ="#aboutMain"> Home</a></li>
+          <li id = "work" class ="li" class="classNav"><a href ="#experience"> Work</a></li>
+          <li id = "about" class ="li"class="classNav" ><a href ="#aboutMain"> About </a></li>
         </ul>
       </nav>    
     </header>
@@ -36,12 +36,12 @@
     <main>
       <section class = "section" id = "aboutMain" ><br>
         <h1 class = "headlines">About</h1>
-        <p> Hi, welcome to my website!</p> 
+        <p id ="welcome"> Hi, welcome to my website!</p> 
       </section>
   
       <section class = "section" id = "experience"><br>
         <h1 class = "headlines">Experience</h1>
-        <ul id = "flexExp" class = "listItems">
+        <ul id = "gridExp" class = "listItems">
           <li class = "flexLi">Experience 1 </li>
           <li class = "flexLi" >Experience 2 </li>
           <li class = "flexLi">Experience 3 </li>
@@ -49,19 +49,22 @@
       </ul>  
       </section> 
       
+      
       <section class = "section" id ="skills"><br>
         <h2 class = "headlines">Skills</h2>
         <ul id = "gridSkills" class = "listItems"></ul>
       </section>
 
+
+
       <section id ="connect"><br>
-        <h1 >Connect</h1>
-        <p>Connect with me</p>
+        <h1 id="connectHead">Connect</h1>
+        <p id="connectPara">Connect with me</p>
       </section>
 
-    <section id = "leaveMessages"><br>
-      <h2>Message me!</h2>
-      <form name="leave_message">
+    <section id = "messageMe"><br>
+      <h2 id="messageHead">Message me!</h2>
+      <form id= "form" name="leave_message">
         <label for="name">Name:</label><br>
         <input type="text" name = "usersName" required ="true"><br><br>
         <label for="email">Email:</label><br>
@@ -81,7 +84,6 @@
 
     <br><br><br>
 
-   <div id="div"></div>
    <footer><small></small></footer>
 
     <script src="js/index.js"></script>

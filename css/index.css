@@ -4,10 +4,11 @@ html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 } 
 
-body{
+html, body{
   margin: 0;
   width: 100%;
   height:100%;
+  font-size: 100%;
 }
 
 .header {
@@ -25,7 +26,7 @@ body{
   text-align: left;
   padding: 1% 1% 1% 10%;
   text-decoration: none;
-  font-size: 150%;
+  font-size: 130%;
   font-weight: bolder;
 }
 
@@ -36,49 +37,73 @@ body{
   width:100%; 
 }
 
+.header a:link {
+  color: #007C7C;
+}
+
+.header a:visited {
+  color: #007C7C;
+}
+
+.header a:hover, a:active {
+  color: black;
+  text-decoration: underline;
+  font-style: oblique;
+  border-bottom: 2px solid #007C7C; 
+}
+
+.header a:link, a:visited {
+  text-decoration: none;
+}
+
 li{
   list-style-type: none;
 }
 
 .li {
-  display: inline;  
+  display:inline-flex;
+  margin-right: 5%;
   text-align: right;
-  padding: 2%;
   width:auto;
   font-weight: bold;
   color:#007C7C;
 }
 
 h1, h2  {
-  font-size: large;
+  font-size:105%;
   font-weight: bold;
   color:#007C7C; 
 }
 
 .section{
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
   border: 1px solid;
   box-shadow: 5px 10px #577575;
   box-sizing: content-box;
 }
 
+#welcome{
+  text-align: center; 
+  font-size: 95%;
+}
+
 #aboutMain{
   margin: 10% 40% 10% 20%;
-  padding: 2%;
 }
 
 #experience{
-   margin: 0 10% 10% 50%; 
+  margin: 0 10% 10% 50%; 
 }
 
-.flexLi{
-  display: flex;
-  flex-wrap: wrap;
+#gridExp, #gridSkills {
+  display:grid;
+  grid-auto-flow: column;
+  overflow: hidden;
 }
 
 #skills{
-  margin: 0 50% 10% 10%;  
+  margin: 0 50% 30% 10%;  
 }
 
 .headlines{
@@ -89,45 +114,16 @@ h1, h2  {
   text-align: center;
   padding-left: 0;
   list-style-position: inside;
+  font-size: 90%;
 }
 
-#div {
-  width: 100%;
-  border-bottom: 2px solid #007C7C;
-  padding-top: 30%;
-  background-color: #e8e8c1;
-  margin-top: 20%;
-}
-
-#connect{
-    float: right;
-    font-size: small;
-    padding:0;
-    margin-top: 45%;
-    margin-right: 2%;
-}
-
-/* leaveMessages-small*/
-@media (min-height: 320px), screen and (orientation: portrait){
-  #leaveMessages{
-      float: right;
-      font-size: small;
-      padding:0;
-      margin-top: 25%;
-      margin-right: 55%;      
-    }   
-  }
-
-/* leaveMessages - large*/
-@media (min-height: 700px), screen and (orientation: portrait){
-  #leaveMessages{
-      float: right;
-      font-size: small;
-      padding:0;
-      margin-top: 28%;
-      margin-right: 60%;
-    }  
-  }
+#messageMe{
+  float: right;
+  font-size: 100%;
+  padding:0;
+  margin-top: 25%;
+  margin-right: 75%;      
+}   
 
 textarea, input{
   background-color:#f5f5dc;
@@ -135,8 +131,36 @@ textarea, input{
   padding: 4%;
 }
 
+input:focus-visible {
+  outline: 2px solid #007C7C; 
+}
+
+textarea:focus-visible {
+  outline: 3px solid #007C7C; 
+}
+
 label{
-  font-size: 110%;
+  font-size:90%;
+}
+
+#connect{
+  display: grid;
+  grid-column-gap: 1px; 
+  padding:0;
+  margin-left: 85%;
+  margin-bottom: -45%;
+}
+
+#connectHead, #connectPara{
+  text-align: center;
+}
+
+#connectHead{
+  font-size: 100%; 
+}
+
+#connectPara{
+  font-size: 85%;
 }
 
 #myMessages{
@@ -144,50 +168,33 @@ label{
   list-style-type: none;
 }
 
-/* messages-small*/
-@media (min-height: 320px), screen and (orientation: portrait){
-  #messages{
-      font-size: small;
-      padding:0 0 1% 0;
-      border: 10px solid #007C7C;
-      float: right;
-      margin-top: 32%;
-      margin-right: -50%;
-      border-block-style: groove;
-    }  
-  }
+#messages{ 
+  display: grid;
+  border: 10px solid #007C7C;
+  float: right;
+  padding: 1%;
+  border-block-style: groove;
+  text-align: center;
+  margin-right: -45%;
+  margin-top: 30%;
+  }  
 
- /* messages-large*/
-  @media (min-height: 700px), screen and (orientation: portrait){
-    #messages{
-      font-size: small;
-      padding:0 0 1% 0;
-      border: 10px solid #007C7C;
-      float: right;
-      margin-top: 35%;
-      margin-right: -34%;
-      border-block-style: groove;
-      text-align: center;
-    }    
-  }
-
-  button{
-    background: #007C7C;
-    border: 0;
-    color: #e8e8c1;
-    border-radius: 35%;
+button{
+  background: #007C7C;
+  border: 0;
+  color: #e8e8c1;
+  border-radius: 15%;
 }
 
- #sendButton{
+#sendButton{
   margin-top:-6%;
   margin-left:75%;
-  padding: 7%;
+  padding: 4%;
 }
 
 .removeButton{
   margin-top:5%;
-  margin-left:60%;
-  padding: .5% 5%;
+  margin-left:60%;  
 }
 
 footer {
@@ -196,4 +203,74 @@ footer {
   position: relative;
   bottom:0;
   width: 100%;
+  font-size: 80%;
+  font-weight: bold;
+} 
+
+@media (max-width: 800px){
+  body{
+    font-size: 65%;
+  }
+}
+
+@media (max-width: 800px){
+  #connect{
+    display: grid;  
+    padding:-1%;
+    margin-left: 80%;
+    margin-bottom: -65%; 
+  } 
+}
+
+@media (max-width: 800px){
+  #form{
+    display:flexbox;
+    font-size: small;
+    margin-top: 25%;
+    margin-left: 45%;;
+    width: 100%;   
+  }   
+}
+
+@media (max-width: 800px){
+  #gridExp, #gridSkills {
+    display:grid;
+    grid-auto-flow: row;
+    overflow: hidden;
+    width: 100%;
+  } 
+}
+
+@media (max-width: 800px){
+  #sendButton{
+    margin-bottom:5%;
+    margin-left:82%;
+    padding: 0;
+    height: 10%;
+    width:25%;
+  }
+}
+
+@media (max-width: 800px){
+  #messages{
+    display: grid;
+    border: 10px solid #007C7C; 
+    padding: 1%;
+    border-block-style: groove;
+    text-align: center;
+    margin-right: -70%;
+    margin-top: 46.5%;
+  } 
+}
+
+@media (max-width: 800px){
+  #skills{
+    margin: 0 50% 75% 10%;  
+  }
+}
+
+@media (max-width: 800px){
+  #messageHead{
+    margin-left: 40%;
+  }
 }
