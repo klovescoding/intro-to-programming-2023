@@ -48,10 +48,10 @@ messageForm.addEventListener('submit', function (event) {
      let removeButton = document.createElement("button")
      removeButton.innerHTML = `delete <input type="button">`
      removeButton.classList.add("removeButton")
-
+   
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
-    
+
      document.querySelector("form").reset()
 
      removeButton.addEventListener('click', function () {
@@ -60,3 +60,24 @@ messageForm.addEventListener('submit', function (event) {
         entry.remove();
               
    })});
+
+
+//Lesson 6.1
+
+let githubRequest = new XMLHttpRequest();
+githubRequest.open("GET", "https://api.github.com/users/klovescoding/repos");
+githubRequest.send();
+
+githubRequest.addEventListener("load", function (event)  {
+    let repositories = JSON.parse(this.response)
+    console.log(repositories);
+
+ for (let i = 0; i < repositories.length; i++)  {
+
+    let projectSection = document.getElementById("projects")
+    let projectList = projectSection.querySelector("ul");
+    let project = document.createElement("li")
+    project.innerText = `${JSON.stringify(repositories[i].name)}` 
+    projectList.appendChild(project);
+ }
+});
