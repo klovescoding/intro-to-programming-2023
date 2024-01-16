@@ -62,22 +62,24 @@ messageForm.addEventListener('submit', function (event) {
    })});
 
 
-//Lesson 6.1
+//Lesson 6.2
 
-let githubRequest = new XMLHttpRequest();
-githubRequest.open("GET", "https://api.github.com/users/klovescoding/repos");
-githubRequest.send();
+fetch ("https://api.github.com/users/klovescoding/repos")
+.then(response => response.json())
+.catch(error => document.getElementById("projects").innerText = `${error}
 
-githubRequest.addEventListener("load", function (event)  {
-    let repositories = JSON.parse(this.response)
-    console.log(repositories);
+Oh no - Looks like there's a problem loading the PROJECTS section...oops!!!`)
+.then(function repo(data) {
 
- for (let i = 0; i < repositories.length; i++)  {
+ for (let i = 0; i < data.length; i++)  {
 
+    //console.log(i)
     let projectSection = document.getElementById("projects")
     let projectList = projectSection.querySelector("ul");
     let project = document.createElement("li")
-    project.innerText = `${JSON.stringify(repositories[i].name)}` 
+    let repoName = JSON.stringify(data[i].name)
+    project.innerText = repoName
     projectList.appendChild(project);
+    //console.log(repoName)
  }
-});
+})
