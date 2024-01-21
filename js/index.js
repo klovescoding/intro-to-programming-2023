@@ -11,10 +11,10 @@ small.style.textAlign = "center";
 
 
 let skills = [
-    "Tech skill 1",
-    "Tech skill 2",
-    "Tech skill 3",
-    "Tech skill 4"
+    "HTML",
+    "CSS",
+    "Usability Testing",
+    "Heuristic Evaluation"
 ]
 
 let skillsSection = document.getElementById("skills");
@@ -61,25 +61,23 @@ messageForm.addEventListener('submit', function (event) {
               
    })});
 
+   function fetchData(url) {
+      return fetch(url)
+      .then(res => res.json())
+      .catch(error => document.getElementById("projects").innerText = `${error}
 
-//Lesson 6.2
-
-fetch ("https://api.github.com/users/klovescoding/repos")
-.then(response => response.json())
-.catch(error => document.getElementById("projects").innerText = `${error}
-
-Oh no - Looks like there's a problem loading the PROJECTS section...oops!!!`)
-.then(function repo(data) {
-
- for (let i = 0; i < data.length; i++)  {
-
-    //console.log(i)
-    let projectSection = document.getElementById("projects")
-    let projectList = projectSection.querySelector("ul");
-    let project = document.createElement("li")
-    let repoName = JSON.stringify(data[i].name)
-    project.innerText = repoName
-    projectList.appendChild(project);
-    //console.log(repoName)
- }
-})
+      Oh no - Looks like there's a problem loading the PROJECTS section...oops!!!`)
+   }
+   fetchData ("https://api.github.com/users/klovescoding/repos")
+   .then(function repo(data) {
+   
+    for (let i = 0; i < data.length; i++)  {
+   
+       let projectSection = document.getElementById("projects")
+       let projectList = projectSection.querySelector("ul");
+       let project = document.createElement("li")
+       let repoName = JSON.stringify(data[i].name)
+       project.innerText = repoName
+       projectList.appendChild(project);
+    }
+   })
